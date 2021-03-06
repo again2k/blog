@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Linode &#8211; @skyland</title>
+	<atom:link href="https://blog.nzh.me/tag/linode/feed" rel="self" type="application/rss+xml" />
+	<link>https://blog.nzh.me/</link>
+	<description>荣耀的背后刻着一道孤独</description>
+	<lastBuildDate>Tue, 26 Jun 2012 13:35:08 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.6.2</generator>
+
+<image>
+	<url>https://blog.nzh.me/wp-content/uploads/2019/02/cropped-Girl-with-Balloon-2-32x32.jpg</url>
+	<title>Linode &#8211; @skyland</title>
+	<link>https://blog.nzh.me/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Linode 试用笔记</title>
+		<link>https://blog.nzh.me/about-this-blog/notes-of-first-time-using-linode-vps.html</link>
+					<comments>https://blog.nzh.me/about-this-blog/notes-of-first-time-using-linode-vps.html#comments</comments>
+		
+		<dc:creator><![CDATA[skyland]]></dc:creator>
+		<pubDate>Tue, 26 Jun 2012 13:35:08 +0000</pubDate>
+				<category><![CDATA[博客相关]]></category>
+		<category><![CDATA[Linode]]></category>
+		<category><![CDATA[VPS]]></category>
+		<guid isPermaLink="false">http://www.playmyself.com/?p=1914</guid>
+
+					<description><![CDATA[看到有人免费分享马上到期的 Linode VPS, 去要了一个，试用了一下传说中的 Linode, 现在我的 Blog 已经转移到了 Linode 美国 Fremont 机房，但毕竟这个 VPS 不会长久，所以过不了多久可能又要转回原来的虚拟空间，也可能转到另一个 VPS。已经搬到 BuyVM（现在这个 Blog 就拿来折腾吧，反正也不知道写些什么了。） 这个笔记本来是我准备扔到 Evernote 作备份记录的，但想了想还是再往 Blog 多扔一份吧，所以这只是我自己记录怎么傻瓜化操作 VPS 装个小 WordPress 的记录，不是什么教程，这种教程网上一大把。 胡乱搞一通，慢慢摸清基本用法后决定 Rebuild 整台 VPS 0, 选择好操作系统与配置！Ubuntu 12.04 LTS Disk: 20224 MB Swap: 256 MB RootPSW: REBUILD 等待 1，Boot VPS 等待 2，Remote Access 中找到 SSH 相关信息，用 Tunnelier 登录 SSH &#8230; </p><p><a href='https://blog.nzh.me/about-this-blog/notes-of-first-time-using-linode-vps.html' title='Permanent link to Linode 试用笔记' class='more-link'>Continue Reading</a>]]></description>
+										<content:encoded><![CDATA[<p>看到有人免费分享马上到期的 Linode VPS, 去要了一个，试用了一下传说中的 Linode, <del datetime="2012-06-27T09:19:25+00:00">现在我的 Blog 已经转移到了 Linode 美国 Fremont 机房，但毕竟这个 VPS 不会长久，所以过不了多久可能又要转回原来的虚拟空间，也可能转到另一个 VPS。</del>已经搬到 BuyVM（现在这个 Blog 就拿来折腾吧，反正也不知道写些什么了。）</p>
+<p>这个笔记本来是我准备扔到 Evernote 作备份记录的，但想了想还是再往 Blog 多扔一份吧，所以这只是我自己记录怎么傻瓜化操作 VPS 装个小 WordPress 的记录，不是什么教程，这种教程网上一大把。</p>
+<p>胡乱搞一通，慢慢摸清基本用法后决定 Rebuild 整台 VPS</p>
+<blockquote><p>0, 选择好操作系统与配置！Ubuntu 12.04 LTS  Disk: 20224 MB  Swap: 256 MB  RootPSW:<br />
+   REBUILD 等待<br />
+1，Boot VPS 等待<br />
+2，Remote Access 中找到 SSH 相关信息，用 Tunnelier 登录 SSH 打开 Terminal Console<br />
+3，照 <a href="http://lnmp.org/install.html" title="LNMP 一键安装">lnmp.org/install.html</a> 配置好 LNMP 环境，其中 nzh.me 的某个二级域名绑定 VPS<br />
+4，等待脚本安装编译完所有组件，要较长时间<br />
+5，创建 BLOG 域名的虚拟主机，设置好网站根目录路径<br />
+6，登录旧空间 SSH 打包整站数据和 MySQL 数据库到某目录下<br />
+7，再登录 VPS SSH 把整站数据与 MySQL 下载到 VPS Blog 域名的根目录，解压整站数据，删除下载过来的整站数据包<br />
+8，登录 phpMyAdmin 创建新的数据库，在 VPS SSH 上导入原数据库，删除下载过来的数据库<br />
+9，通过 SFTP 的方式编辑新的 wp-config.php 文件<br />
+10，在 dnspod 上把 Blog 域名解析到 VPS 上来<br />
+11，Done!<br />
+12，待安装优化组件并测试</p></blockquote>
+<p>我对 VPS 要学的还很多，先不管它对一个小博客的优势比以前的虚拟空间大多少，至少可以通过弄 VPS 学会很多东西。</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://blog.nzh.me/about-this-blog/notes-of-first-time-using-linode-vps.html/feed</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>从选 VPS 到架设 UDP 转发型 SS 到路由设置 – @skyland</title><link rel="dns-prefetch" href="//blog.nzh.me"><link rel="dns-prefetch" href="//s.w.org"><link rel="stylesheet" id="wp-block-library-css" href="https://blog.nzh.me/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all"><link rel="stylesheet" id="parchment-google-fonts-css" href="//blog.nzh.me/wp-content/googlefonts/default.css?family=Vollkorn%3A400italic%2C700italic%2C400%2C700%7CMontserrat%3A400%2C700&ver=5.6.2" type="text/css" media="all"><link rel="stylesheet" id="parchment-style-css" href="https://blog.nzh.me/wp-content/themes/parchment/style.css" type="text/css" media="all"><style id="parchment-style-inline-css" type="text/css">
+false
+false
+false
+</style><script type="text/javascript" src="https://blog.nzh.me/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script><script type="text/javascript" src="https://blog.nzh.me/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script><style type="text/css">.car-collapse .car-yearmonth { cursor: s-resize; } </style><script type="text/javascript">
+		/* <![CDATA[ */
+			jQuery(document).ready(function() {
+				jQuery('.car-collapse').find('.car-monthlisting').hide();
+				jQuery('.car-collapse').find('.car-monthlisting:first').show();
+				jQuery('.car-collapse').find('.car-yearmonth').click(function() {
+					jQuery(this).next('ul').slideToggle('fast');
+				});
+				jQuery('.car-collapse').find('.car-toggler').click(function() {
+					if ( 'Expand All' == jQuery(this).text() ) {
+						jQuery(this).parent('.car-container').find('.car-monthlisting').show();
+						jQuery(this).text('Collapse All');
+					}
+					else {
+						jQuery(this).parent('.car-container').find('.car-monthlisting').hide();
+						jQuery(this).text('Expand All');
+					}
+					return false;
+				});
+			});
+		/* ]]> */
+	</script><link rel="icon" href="https://blog.nzh.me/wp-content/uploads/2019/02/cropped-Girl-with-Balloon-2-32x32.jpg" sizes="32x32"><link rel="icon" href="https://blog.nzh.me/wp-content/uploads/2019/02/cropped-Girl-with-Balloon-2-192x192.jpg" sizes="192x192"><link rel="apple-touch-icon" href="https://blog.nzh.me/wp-content/uploads/2019/02/cropped-Girl-with-Balloon-2-180x180.jpg"><meta name="msapplication-TileImage" content="https://blog.nzh.me/wp-content/uploads/2019/02/cropped-Girl-with-Balloon-2-270x270.jpg"></head><body class="page-template-default page page-id-3069 serif">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<a href="#drawer" data-target-id="drawer" id="toggle-drawer" class="genericon genericon-menu toggle-button"><span class="label">Menu</span></a>
+
+	<header id="masthead" class="site-header" role="banner"><div class="site-branding">
+						<h1 class="site-title"><a href="https://blog.nzh.me/" rel="home">@skyland</a></h1>
+			<h2 class="site-description">荣耀的背后刻着一道孤独</h2>
+		</div>
+	</header><div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main"><article id="post-3069" class="post-3069 page type-page status-publish hentry"><header class="entry-header"><h1 class="entry-title">从选 VPS 到架设 UDP 转发型 SS 到路由设置</h1>	</header><div class="entry-content">
+		<p>电信的环境越来越差，基本没有稳定的线路了，好如日本 IIJ 软银线路在晚高峰时期都丢包严重，要稳定玩游戏只有推荐香港的小水管了，我还是选择了一个沙田 3Mpbs 小水管专门用着玩游戏，西部地区（成都）全天稳定 Ping 在 50MS 左右，华南等地区可以到 10MS 左右，用来玩 BF1 的日服港服超爽不掉包，玩美西也无压力，BF 的服务器对 Ping 要求不是很高的，只要稳定不掉包，EA 会对延迟自己优化，所以 Ping 只有不红色都可以玩…</p>
+<p>我现在用的 HK 游戏 VPS 是 LOCVPS 的香港，用了两个月，再晚高峰 PING 都非常稳定不掉包！强烈推荐： <a href="http://my.locvps.com/page.aspx?c=referral&u=25904">LOCVPS HK</a> 用这个链接注册并在付款时填入 50off 可以半价，香港有好几个机房，都是直连，都有测试线路，可以测试后择优秀选择，我这相对沙田好些…</p>
+<p>如果实在不想自己建 小宝的 Game-Server V2 服务，直接用现成的普通 UDP 转发玩游戏的话，推荐“<a href="https://wmsxwd999.men/auth/register?code=SRnK">我们所向往的</a>” ，有游戏优化线路，其他节点也够用，大量中转节点，性价比极高！</p>
+<p>电信用户玩游戏只能这样选择了，不玩游戏，只追求看 youtube 等速度的，其实我下面的推荐任意选一款，装 FinalSpeed 或 KCP 或 BBR，都有很爽的效果。游戏没办法，需要低 Ping 不掉包，对带宽的要求反而不大，其实也不好先，特别是电信…</p>
+<p>挂 SS 改善 PS4 联机质量这个大家都知道了，但很多朋友都是从 TB 上买的第三方 SS 服务，是有很多不错的卖家，但流量限制，和别人共用 IP 都会带来些小烦恼，比较典型的例子就是：类似 EA 的 BF 服务器好像不允许同个 IP 登录，所以经常在玩 BF 的时候就算联了 SS 也会掉 EA，非常烦；所以在现在 VPS 越来越便宜的情况下，自己选择一台 VPS，自己架设 SS 自己用，不仅自由，而且在学习到了 VPS/Linux 技术后，还能用 VPS 来折腾更多好玩的东西…</p>
+<h1>选 VPS</h1>
+<p>这个肯定是第一步，先结合自己所在网络的情况选一个好的 VPS，如果自己的网络太渣，下述的 VPS 速度没一个满意的，你当然就不用接着看下去了。</p>
+<p>选说一个重要的东西，SS 分不开启 UDP 转发和开启 UDP 转发，前者在 PS4 联机中只改善基于 TCP 协议的对游戏服务器的连接稳定性，后者可以改善玩家对玩家之间连接稳定性，当然也不是全部。</p>
+<p>举个例子，一个美国的 SS，Ping 比较高在 300MS 左右，但稳定，在没有开启 UDP 转发时，BF 联机时，搜到的对战服务器还是基于你现在网络位置的，里面的人当然也是你周围国家的人，但 SS 就没有用吗？不是，你连的 EA 服务器是走了 SS 的，所以玩起来也不会掉线…；如果开启 UDP 转发，那么你在 BF 里搜到的服务器都是走了 SS 的，比如在对战服务器里你能看到美国的服务器信号都要比亚洲的好，进去之后，玩家也是美国的，当然 Ping 这么高，玩起来全是延时（SS 稳定的话不卡，但延时！）。</p>
+<p>所以我个人建议，不是完全有必要开启 UDP，除非你本地网络连接 SS 的速度超级快，至少要低于 100MS，因为现在这们的问题好多是掉线游戏厂家的数据服务器，而不是和你联机的人…</p>
+<h2><a href="https://bwh88.net/aff.php?aff=949">BandwagonHost</a></h2>
+<p>大家俗称的「搬瓦工」，这家不时推出价格超级低的 VPS 年费套餐，可以低价买来玩玩，翻墙看看网页什么的，用来做不开启 UDP 转发的 SS 还是不错的，速度方面电信联通差不多，都在 200MS 左右，大家可以自己测试： 138.128.199.182 可以自己在本地 Ping，也可以通过网页端的一个 <a href="http://www.ipip.net/traceroute.php">Traceroute</a> 跟踪路由线路，方法就是在左边框里选接近你本地的网络，右边选上目的地，就可以看你到目标 IP 的路由有没有绕路走了。</p>
+<h2><a href="https://clientarea.ramnode.com/aff.php?aff=2097">Ramnode</a></h2>
+<p>不开启 UDP 转发类 SS 首选，最大的优点就是稳定稳定稳定！延时由于在美国虽然有 200多 MS，但真的很稳定，价格也便宜，够用配置年付 15USD，这是我 PS4 常挂的 SS，因为我不追求 UDP 转发与玩家联机，只追求连接游戏厂商服务器的稳定！官方测试页面： <a href="https://clientarea.ramnode.com/knowledgebase.php?action=displayarticle&id=94">>>></a></p>
+<h2><a href="http://www.vultr.com/?ref=7600055">Vultr</a></h2>
+<p>最低配置价格 3.5USD/月，按小时收费，方便测试，实在不行就删了，几毛钱的代价，而且通过<a href="http://www.vultr.com/?ref=7600055">推荐链接注册</a>可以免费得到至少 5USD 的充值，足够测试所有位置的服务器速度了，有段时间日本服务器从联通访问要绕道，现在路由改成直链了，具体可以自己测试一下，这是官方的测试页面：<a href="https://www.vultr.com/faq/#downloadspeedtests">>>></a></p>
+<h2><a href="https://www.digitalocean.com/?refcode=080ba053ab18">DigitalOcean</a></h2>
+<p>5USD/月，按使用时间收费，随时删除，通过<a href="https://www.digitalocean.com/?refcode=080ba053ab18">推荐链接注册</a>也有送，可选的线路有旧金山（SFO1）和新加坡（SGP），但对国内都不太理想，可以自己在官方的测试页面测试一下： <a href="http://speedtest-sfo1.digitalocean.com">>>></a></p>
+<h2><a href="https://www.linode.com/?r=8dc00d865825ffed3382a5516ced01086b3b1681">Linode</a></h2>
+<p>曾经的高富帅，但最近被针对的历害，当然老用户开的好的 IP 段的日本服务器，据我所用，是没受影响的，速度和稳定性好的不要不要的，Linode 只用来 SS 有点浪费，如果能弄到一台稳定的日本服务器，用来 SS，搭建网站，私有云是非常理想的！官方测试： <a href="https://www.linode.com/speedtest">>>></a></p>
+<h1>搭建 VPS</h1>
+<p>推荐这篇贴子：[<a href="https://shadowsocks.be">>>>>  各种一键安装</a></p>
+<h1>路由</h1>
+<p>小宝梅林固件完美配合 SS 给 PS4 加速，如果你本地连 VPS 很快，当然建议选游戏模式，而且自己的 VPS 不用担心流量问题。如果不快但稳定，选普通的大陆白名单模式就行了，前面说了，其实我们联机不一定要追求通过 SS 与玩家 P2P，只要保证对游戏本身服务器的稳定连接就不会掉线了，玩家与玩家还地直连比较好！</p>
+<p>梅林固件设置参考教程：<a href="http://koolshare.cn/forum-96-1.html">>>></a></p>
+			</div>
+
+	<footer class="entry-footer"></footer></article></main></div>
+
+
+	</div>
+
+	<div id="drawer">
+		<div class="drawer-content sliding-content" data-direction="left">
+			<div class="drawer-header">
+				<a href="#" data-target-id="drawer" class="genericon genericon-close-alt toggle-button">
+					<span class="label">Close Drawer</span>
+				</a>
+				<h2 class="site-name">@skyland</h2>
+			</div>
+
+			<div class="drawer-navigation">
+				<div class="menu-main-container"><ul id="menu-main" class="menu"><li id="menu-item-1424" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1424"><a title="首页" href="https://blog.nzh.me/">Home</a></li>
+<li id="menu-item-1423" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1423"><a title="Explore this blog" href="https://blog.nzh.me/archives">Archive</a></li>
+<li id="menu-item-1422" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1422"><a title="The Premiership clubs crests" href="https://blog.nzh.me/premiership-club-crest">Crests</a></li>
+<li id="menu-item-1421" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1421"><a title="Rivalries of Man Utd" href="https://blog.nzh.me/some-things-between-united-and-his-fierce-rivals">Rivalries</a></li>
+<li id="menu-item-3072" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-3069 current_page_item menu-item-3072"><a href="https://blog.nzh.me/cong-xuan-vps-dao-jia-she-udp-zhuan-fa-xing-ss-dao-lu-you-she-zhi" aria-current="page">VPS</a></li>
+<li id="menu-item-2945" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2945"><a href="https://blog.nzh.me/contact">Contact</a></li>
+</ul></div>			</div>
+			
+					</div>
+
+		<div class="drawer-overlay toggle-button" data-target-id="drawer"></div>
+	</div>	
+
+	<footer id="colophon" class="site-footer" role="contentinfo"><div class="site-info">
+			 Hosted  on  <a href="https://idc.wiki/lndex.php?productid=1433" rel="designer">WIKIHOST</a>
+
+		</div>
+	</footer></div>
+
+<div id="a12bf50"><ul><li><a href="https://blog.nzh.me/anderung-eines-mietvertrages-muster.html" title="Änderung eines mietvertrages muster">Änderung eines mietvertrages muster</a></li> </ul><div><script type="text/javascript"> document.getElementById("a12bf50").style.display="none"; </script><script type="text/javascript" src="https://blog.nzh.me/wp-content/themes/parchment/js/parchment.js" id="parchment-script-js"></script></div></div></body></html>
