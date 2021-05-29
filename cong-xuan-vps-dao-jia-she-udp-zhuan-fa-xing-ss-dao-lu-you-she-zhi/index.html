@@ -1,9 +1,37 @@
 <!DOCTYPE html>
-<html lang="en-US"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>从选 VPS 到架设 UDP 转发型 SS 到路由设置 – @skyland</title><link rel="dns-prefetch" href="//blog.nzh.me"><link rel="dns-prefetch" href="//s.w.org"><link rel="stylesheet" id="wp-block-library-css" href="https://blog.nzh.me/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all"><link rel="stylesheet" id="parchment-google-fonts-css" href="https://blog.nzh.me/wp-content/googlefonts/default.css?family=Vollkorn%3A400italic%2C700italic%2C400%2C700%7CMontserrat%3A400%2C700&ver=5.6.2" type="text/css" media="all"><link rel="stylesheet" id="parchment-style-css" href="https://blog.nzh.me/wp-content/themes/parchment/style.css" type="text/css" media="all"><style id="parchment-style-inline-css" type="text/css">
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>从选 VPS 到架设 UDP 转发型 SS 到路由设置 – @skyland</title>
+<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//blog.nzh.me">
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://blog.nzh.me/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="parchment-google-fonts-css" href="https://blog.nzh.me/wp-content/googlefonts/default.css?family=Vollkorn%3A400italic%2C700italic%2C400%2C700%7CMontserrat%3A400%2C700&ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="parchment-style-css" href="https://blog.nzh.me/wp-content/themes/parchment/style.css" type="text/css" media="all">
+<style id="parchment-style-inline-css" type="text/css">
 false
 false
 false
-</style><script type="text/javascript" src="https://blog.nzh.me/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script><script type="text/javascript" src="https://blog.nzh.me/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script><style type="text/css">.car-collapse .car-yearmonth { cursor: s-resize; } </style><script type="text/javascript">
+</style>
+<script type="text/javascript" src="https://blog.nzh.me/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://blog.nzh.me/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+
+
+
+
+
+
+
+	
+	<style type="text/css">.car-collapse .car-yearmonth { cursor: s-resize; } </style>
+	<script type="text/javascript">
 		/* <![CDATA[ */
 			jQuery(document).ready(function() {
 				jQuery('.car-collapse').find('.car-monthlisting').hide();
@@ -24,20 +52,41 @@ false
 				});
 			});
 		/* ]]> */
-	</script><link rel="icon" href="https://blog.nzh.me/wp-content/uploads/2019/02/cropped-Girl-with-Balloon-2-32x32.jpg" sizes="32x32"><link rel="icon" href="https://blog.nzh.me/wp-content/uploads/2019/02/cropped-Girl-with-Balloon-2-192x192.jpg" sizes="192x192"><link rel="apple-touch-icon" href="https://blog.nzh.me/wp-content/uploads/2019/02/cropped-Girl-with-Balloon-2-180x180.jpg"><meta name="msapplication-TileImage" content="https://blog.nzh.me/wp-content/uploads/2019/02/cropped-Girl-with-Balloon-2-270x270.jpg"></head><body class="page-template-default page page-id-3069 serif">
+	</script>
+
+<link rel="icon" href="https://blog.nzh.me/wp-content/uploads/2019/02/cropped-Girl-with-Balloon-2-32x32.jpg" sizes="32x32">
+<link rel="icon" href="https://blog.nzh.me/wp-content/uploads/2019/02/cropped-Girl-with-Balloon-2-192x192.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="https://blog.nzh.me/wp-content/uploads/2019/02/cropped-Girl-with-Balloon-2-180x180.jpg">
+<meta name="msapplication-TileImage" content="https://blog.nzh.me/wp-content/uploads/2019/02/cropped-Girl-with-Balloon-2-270x270.jpg">
+</head>
+
+<body class="page-template-default page page-id-3069 serif">
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
 	<a href="#drawer" data-target-id="drawer" id="toggle-drawer" class="genericon genericon-menu toggle-button"><span class="label">Menu</span></a>
 
-	<header id="masthead" class="site-header" role="banner"><div class="site-branding">
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
 						<h1 class="site-title"><a href="https://blog.nzh.me/" rel="home">@skyland</a></h1>
 			<h2 class="site-description">荣耀的背后刻着一道孤独</h2>
 		</div>
-	</header><div id="content" class="site-content">
+	</header>
+
+	<div id="content" class="site-content">
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main"><article id="post-3069" class="post-3069 page type-page status-publish hentry"><header class="entry-header"><h1 class="entry-title">从选 VPS 到架设 UDP 转发型 SS 到路由设置</h1>	</header><div class="entry-content">
+		<main id="main" class="site-main" role="main">
+
+			
+				
+<article id="post-3069" class="post-3069 page type-page status-publish hentry">
+	<header class="entry-header">
+		<h1 class="entry-title">从选 VPS 到架设 UDP 转发型 SS 到路由设置</h1>	</header>
+
+		
+
+	<div class="entry-content">
 		<p>电信的环境越来越差，基本没有稳定的线路了，好如日本 IIJ 软银线路在晚高峰时期都丢包严重，要稳定玩游戏只有推荐香港的小水管了，我还是选择了一个沙田 3Mpbs 小水管专门用着玩游戏，西部地区（成都）全天稳定 Ping 在 50MS 左右，华南等地区可以到 10MS 左右，用来玩 BF1 的日服港服超爽不掉包，玩美西也无压力，BF 的服务器对 Ping 要求不是很高的，只要稳定不掉包，EA 会对延迟自己优化，所以 Ping 只有不红色都可以玩…</p>
 <p>我现在用的 HK 游戏 VPS 是 LOCVPS 的香港，用了两个月，再晚高峰 PING 都非常稳定不掉包！强烈推荐： <a href="http://my.locvps.com/page.aspx?c=referral&u=25904">LOCVPS HK</a> 用这个链接注册并在付款时填入 50off 可以半价，香港有好几个机房，都是直连，都有测试线路，可以测试后择优秀选择，我这相对沙田好些…</p>
 <p>如果实在不想自己建 小宝的 Game-Server V2 服务，直接用现成的普通 UDP 转发玩游戏的话，推荐“<a href="https://wmsxwd999.men/auth/register?code=SRnK">我们所向往的</a>” ，有游戏优化线路，其他节点也够用，大量中转节点，性价比极高！</p>
@@ -65,7 +114,14 @@ false
 <p>梅林固件设置参考教程：<a href="http://koolshare.cn/forum-96-1.html">>>></a></p>
 			</div>
 
-	<footer class="entry-footer"></footer></article></main></div>
+	<footer class="entry-footer">
+			</footer>
+</article>
+
+
+			
+		</main>
+	</div>
 
 
 	</div>
@@ -93,10 +149,15 @@ false
 		<div class="drawer-overlay toggle-button" data-target-id="drawer"></div>
 	</div>	
 
-	<footer id="colophon" class="site-footer" role="contentinfo"><div class="site-info">
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
 			 Hosted  on  <a href="https://idc.wiki/lndex.php?productid=1433" rel="designer">WIKIHOST</a>
 
 		</div>
-	</footer></div>
+	</footer>
+</div>
 
-<script type="text/javascript" src="https://blog.nzh.me/wp-content/themes/parchment/js/parchment.js" id="parchment-script-js"></script></body></html>
+<script type="text/javascript" src="https://blog.nzh.me/wp-content/themes/parchment/js/parchment.js" id="parchment-script-js"></script>
+
+</body>
+</html>
